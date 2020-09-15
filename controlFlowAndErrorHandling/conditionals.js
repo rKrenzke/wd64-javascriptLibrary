@@ -187,3 +187,66 @@ switch(instructor){
         console.log(`Sorry, I can't find what ${instructor} teaches at this time.`);
 
 }
+
+
+
+// let score = 95;
+// if(score >= 89){
+//     letterGrade = 'A';
+// }
+// else if(score >= 79 && score <= 88){
+//     letterGrade = 'B';
+// }
+// else if(score >= 66 && score <= 78){
+//     letterGrade = 'C';
+// }
+// else if(score >= 59 && score <= 65){
+//     letterGrade = 'D';
+// }
+// else if(score >= 0 && score <= 59){
+//     letterGrade = 'F';
+// }
+// else{
+//     console.log('That score doesn\'t make sense');
+// }
+
+// switch(letterGrade){
+//     case 'A':
+//     case 'B':
+//     case 'C':
+//         console.log(`Your current grade is ${letterGrade} and you are passing the class.`)
+//         break;
+//     default:
+//         console.log(`Your current grade is ${letterGrade} and you are failing the class.`)
+// }
+
+//! Challenge 2: Take Home Challenge
+/*  
+Create a switch statement that takes in a value (number) that represents a grade.  If it is True, console log that they are passing with the correct letter grade.
+*   A: 89-100
+*   B: 79-88
+*   C: 66-78
+*   D: 59-65
+*   F: 0-59
+*/
+
+let gradeScore = 91;
+switch(true){
+    case(gradeScore >= 89):
+        console.log('You are passing with an A in the class!');
+        break;
+    case(gradeScore >= 79 && gradeScore <= 88):
+        console.log('You are passing with a B in the class!');
+        break;
+    case(gradeScore >= 66 && gradeScore <= 78):
+        console.log('You are just passing with a C in the class.');
+        break;
+    case(gradeScore >= 59 && gradeScore <= 65):
+        console.log('You are failing with a D in the class.');
+        break;
+    case(gradeScore >= 0 && gradeScore <= 59):
+        console.log('You are failing with an F in the class.');
+        break;
+    default:
+        console.log('That score doesn\'t make sense');
+}
