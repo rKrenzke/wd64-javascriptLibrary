@@ -29,7 +29,7 @@ for(foodItem of food){
     console.log(foodItem);
 }
 
-// Add
+// Add to array
 food.push('Pizza'); // appends 'Pizza' to the end of our array
 console.log('push: ', food);
 
@@ -48,3 +48,52 @@ console.log('shift: ', food);
 // Adds to the start
 food.unshift('Popcorn', 'Steak'); // 'unshift' adds one or more elements to the beginning of the array
 console.log('unshift: ', food);
+
+
+// Length
+// - We can use a method called length() that can tell us how many values are within our array.
+
+let long = [1,2,3,4,5,6,7,8,9,10];
+console.log(long.length);
+
+let colors = ['blue', 'green', 'yellow', 'red', 'orange', 'purple'];
+console.log(colors);
+console.log(colors.toString());
+
+let boolArr = [true, false, true, false];
+console.log(boolArr.toString());
+
+// ITERATING
+/*
+    forEach:
+        - the forEach() method executes a provided function once for each element in an array - much like a for loop or a for of loop.
+        - runs three arguments:
+            1. the Value
+            2. the Index
+            3. the Array object itself
+*/
+
+let foodList = ['apple', 'pear', 'mushroom', 'cheese', 'peach'];
+for(let i = 0; i < foodList.length; i++){
+    console.log(foodList[i]);
+}
+
+// We invoke callback function for each element within our array
+foodList.forEach(foodItem => console.log(foodItem));
+// A callback function is another function we invoke within our main function
+
+foodList.forEach((foodItem, index) => {
+    console.log(foodItem);
+    console.log(index);
+});
+
+//*** - the second position of the parameter is ALWAYS the index
+
+let movieList = ['Return of the King', 'Inside Man', 'Jurassic Park', 'Brick', 'Master and Commander'];
+movieList.forEach(movie => console.log(movie));
+
+movieList.push('Office Space');
+movieList.forEach(movie => console.log(movie));
+
+movieList.splice(1, 1, 'Love, Death, and Robots');
+movieList.forEach(movie => console.log(movie));
