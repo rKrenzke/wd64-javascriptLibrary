@@ -42,4 +42,36 @@ console.log(showSpan.innerHTML);
     * textContent does the same thing that innerText does, but will return the FULL text of a 'node'.
 
     * innerHTML allows us to set text as well as HTML elements, which will be nested inside of the current HTML element we're referencing.
- */
+*/
+
+//! 3: addEventListener - click
+let btn = document.getElementById('clickThis');
+
+// btn.addEventListener('click', event => {
+//      event.target.style.backgroundColor = 'lightblue';
+// });
+
+/* 
+    - Create a variable that holds the button element (may need to comment out the above code)
+    - Using that variable, make the button toggle between red and blue when clicked.
+*/
+let red = true;
+btn.addEventListener('click', event => {
+    event.target.style.backgroundColor = red ? 'blue' : 'red';
+    // red = !red;
+});
+
+
+//! 4: addEventListener - keyup
+
+let input = document.getElementById('nameInput');
+input.addEventListener('keyup', e => {
+    //console.log(e.target.value);
+    document.getElementsByTagName('p')[0].innerText = 'Something Changed!';
+
+    if(e.target.value == ''){
+        document.getElementsByTagName('p')[1].innerText = 'Nothing has been typed...'
+    } else {
+        document.getElementsByTagName('p')[1].innerText = `Everyone, say hello to ${e.target.value}`;
+    }
+});
