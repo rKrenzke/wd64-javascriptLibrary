@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p id="testParagraph">sample text</p>
+    <p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
+    <br>
+    <hr>
+    <br>
+    <button id="clickThisButton">I want to be clicked</button>
+    <br>
+    <hr>
+    <br>
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="Jon Smith">
+
+    <p>Welcome!</p>
+    <p>No name has been entered</p>
+
+    <script type="text/javascript">
+        document.getElementById('testParagraph').style.color = 'blue';
+        console.log(document.getElementById('testParagraph').style.color);
+        // The two most common ways to select an element are:
+            // document.getElementById('idHere')
+            // document.querySelectorAll('p.classNameHere')
+
+        console.log(document.querySelectorAll('p.sampleClass'));
+        document.querySelectorAll('p.sampleClass')[0].innerText = 'My text was changed!';
+        // Since querySelectorAll returns and array-like NodeList, we need to use array-notation when selecting an element from it, even if there is only one element.
+        document.querySelectorAll('p.sampleClass')[0].innerHTML = '<span> I am a whole new element!</span>';
+
+        document.getElementById('clickThisButton').addEventListener('click', (details) => {
+            details.target.style.backgroundColor = 'red';
+        });
+
+        document.getElementById('nameInput').addEventListener('keyup', (event) => {
+            if(event.target.value === ''){
+                document.getElementsByTagName('p')[3].innerText = 'No name has been entered';
+            } else{
+                document.getElementsByTagName('p')[3].innerText = `Everyone, please welcome ${event.target.value} to the pub.`;
+            }
+        });
+
+
+    </script>
+</body>
+</html>
