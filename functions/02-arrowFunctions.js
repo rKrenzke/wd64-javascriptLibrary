@@ -1,5 +1,5 @@
 /*
-// ARROW FUNCTIONS
+//? ARROW FUNCTIONS
  - Arrow functions are expressional functions that can be simplified into one of two forms: CONCISE and BLOCK BODY.
  - The main goal is to generate shorter syntax for writing a function.
 
@@ -36,6 +36,12 @@ let slightlyComplex = (x,y) => x > 2 && y < 2 ? console.log(`${x} is greater tha
 
 slightlyComplex(3,1);
 slightlyComplex(1,5);
+
+let concise = () => console.log('Concise practice. Concise does not use curly brackets');
+concise();
+
+let moreComplexConcise = (a, b) => a == 'pineapple' || b == 'ham'? console.log('Those are great pizza toppings') : console.log('No, ham and pineapple are the best toppings');
+moreComplexConcise('green peppers', 'ham'); 
 
 // Block:
 // The 'return' keyword IS required. We also include the curly braces.

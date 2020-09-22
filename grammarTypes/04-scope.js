@@ -1,5 +1,5 @@
 /*
-// SCOPE
+    SCOPE
     What is scope?
         - Scope is how a computer keeps track of all variables in a program.
         - It can also be nested, where there's an outer scope (global) that encloses an inner scope (local).

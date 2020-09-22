@@ -1,5 +1,5 @@
 /*
-// HOISTING
+    HOISTING
     What is hoisting?
         - JS pulls all variables and functions calls to the 'top' of their respective scope prior to being executed.
         - Only the declaration is pulled up, NOT the assignment.
@@ -11,7 +11,7 @@
 
 // var hoistedVar = 'using var';
 
-//let hoistedVar = 'using let';  //because of the LET keyword, this variable will not be hoisted
+// let hoistedVar = 'using let';  //because of the LET keyword, this variable will not be hoisted
 
 
 //? Hoisting in a Function

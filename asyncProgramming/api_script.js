@@ -17,6 +17,19 @@ function fetchSpace(e) {
             return results.json() // this method takes in a response (results), reads to completion and returns the results in a json format
         })
         .then(json => {
-            console.log(json)
-        })
+            //console.log(json)
+            displayRockets(json);
+        });
 }
+
+// DISPLAY FUNCTION
+function displayRockets(data){
+    // console.log('DisplayRocket:', data);
+    let rockets = data.forEach(r => {
+        console.log(r);
+        let rocket = document.createElement('li'); // create an li tag
+        rocket.innerText = r.name;
+        spaceShips.appendChild(rocket);
+    });
+}
+

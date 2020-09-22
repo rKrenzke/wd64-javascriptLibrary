@@ -44,7 +44,6 @@ funcOne();
 let first = function funcEColdMedina(){
     console.log('Second Statement');
 };
-
 first();
 
 // Anonymous Function
@@ -53,7 +52,6 @@ first();
 let anon = function(){
     console.log('anon function');
 }
-
 anon();
 
 // Parameters

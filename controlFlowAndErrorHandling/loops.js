@@ -1,5 +1,5 @@
 /* 
-// FOR LOOPS
+    FOR LOOPS
  - Loops help us repeat a process without writing a lot of code
 
  We need to:
@@ -29,11 +29,11 @@ for(let i = 2; i > -10; i -= 4){
 
 let word = 'supercalifragilisticexpialidocious';
 for(let i = 0; i < word.length; i++){
-    console.log(i, word[i]);
+    console.log(word[i]);
 }
 
 /*
-// FOR IN LOOPS
+    FOR IN LOOPS
 */
 
 let city = {
@@ -45,7 +45,7 @@ let city = {
 for(info in city){
     console.log(info);
     console.log(city[info]);
-    console.log(city.name)
+    // console.log(city.name)
 }
 /*
     for(variable IN objects){
@@ -57,6 +57,7 @@ let list = ['milk', 'eggs', 'beans', 'bread', 'bananas'];
 
 for(item in list){
     console.log(list[item]);
+    console.log(item);
 }
 
 //! CHALLENGE
@@ -74,7 +75,7 @@ for(char in name){
 console.log(fullName);
 
 /*
-// FOR OF LOOP
+    FOR OF LOOP
     - In order to run a FOR OF loop, the "thing" must be numbered like an array.
 
     - *** Cannot use objects. Use arrays instead ***
@@ -95,7 +96,7 @@ for(pos of indexArray){
 }
 
 /*
-// Quick Recap:
+    Quick Recap:
     - for loops: loops through a block of code until the computer reaches a specified number.
     - for in loops: loops through properties of an object.
     - for of loops: loops over iterable objects as an arrays and strings. *string can be accessed much in the same way as arrays.

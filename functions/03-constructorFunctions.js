@@ -43,3 +43,18 @@ console.log(person4);
     7 & 8: This 'new' keyword is calling our Person function, creating a new person with the values we are passing as arguments, and storing that person in a variable
 */
 
+// Constructor Function practice
+
+function Animal(name, weight, habitat, isMammal){
+    this.name = name;
+    this.weight = weight;
+    this.habitat = habitat;
+    this.isMammal = isMammal;
+}
+
+let polarBear = new Animal('Polar Bear', 1200, 'Artic', true);
+console.log(polarBear);
+console.log(polarBear.name);
+console.log(polarBear.weight, 'pounds');
+console.log(polarBear.habitat);
+console.log(polarBear.isMammal? "This is a mammal" : "This is not a mammal");

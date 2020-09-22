@@ -1,7 +1,7 @@
 /* 
-// CONDITIONALS
+     CONDITIONALS
 
-//? FALSY VALUES:
+    ? FALSY VALUES:
     - false
     - 0
     - "", '', ``
@@ -13,7 +13,7 @@
 */
 
 /* 
-// IF
+    IF
     - "If" something is true, do "this thing"
 
 */
@@ -34,7 +34,7 @@ if(weather < 70 && rain != false){ //could also be written just as "&& rain"
 };
 
 /* 
-// IF ELSE
+     IF ELSE
     - If/Else statements allow us the ability to write out a chain of events.
 */
 
@@ -77,8 +77,8 @@ if(name == 'Ryan'){
 
 
 /* 
-// ELSE IF
-    - This is a contion that would be checked if the above condition was not met.
+     ELSE IF
+    - This is a condition that would be checked if the above condition was not met.
 */
 
 let cookTime = 20;
@@ -106,7 +106,7 @@ if(age <= 17){
 }; 
 
 /* 
-// TERNARIES
+     TERNARIES
     - This is a quick way of considering an if/else statement. We are capable of writing out our conditional in a simple line.
 */
 
@@ -147,7 +147,7 @@ lampOn != true && daytime == true ? console.log('The lamp is off during the day'
 console.log(`The lamp is ${lampOn ? "on" : "off"} during the ${daytime ? "day" : "night"}`);
 
 /* 
-// SWITCH
+     SWITCH
     - executes a block of code depending on different cases.
 */
 
