@@ -52,7 +52,7 @@ function Animal(name, weight, habitat, isMammal){
     this.isMammal = isMammal;
 }
 
-let polarBear = new Animal('Polar Bear', 1200, 'Artic', true);
+let polarBear = new Animal('Polar Bear', 1200, 'Arctic', true);
 console.log(polarBear);
 console.log(polarBear.name);
 console.log(polarBear.weight, 'pounds');

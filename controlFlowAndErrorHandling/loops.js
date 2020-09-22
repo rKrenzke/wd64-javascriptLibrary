@@ -62,7 +62,7 @@ for(item in list){
 
 //! CHALLENGE
 //* What if a user input their name in an odd way and we want to display it correctly.
-//let name = 'piCard';
+// let name = 'piCard';
 //* Write a for-in loop that pulls in the name, changes each letter to the proper case and then console.log the results.
 
 let name = 'piCard';

@@ -40,7 +40,7 @@ console.log('The End');
 
     ? REST API
         - REpresentational State Transfer
-            - creates an object of requested data by the cline, sends values in response to user
+            - creates an object of requested data by the client, sends values in response to user
         - Methods:
             CRUD
                 - Create (POST)

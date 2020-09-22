@@ -1,5 +1,5 @@
 /*
-//? ARROW FUNCTIONS
+    ? ARROW FUNCTIONS
  - Arrow functions are expressional functions that can be simplified into one of two forms: CONCISE and BLOCK BODY.
  - The main goal is to generate shorter syntax for writing a function.
 

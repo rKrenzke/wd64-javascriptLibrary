@@ -5,16 +5,7 @@
 let netflix = {
     id: 1,
     name: "The Office",
-    season1: {
-        seasonInfo: {
-            episodeInfo: [{
-                    episode: 1,
-                    episodeName: "Pilot"
-                },
-                {
-                    episode: 2,
-                    episodeName: "Diversity Day"
-                },
+    season1: {seasonInfo: {episodeInfo: [{episode: 1, episodeName: "Pilot"}, {episode: 2, episodeName: "Diversity Day"},
                 {
                     episode: 3,
                     episodeName: "Health Care"
