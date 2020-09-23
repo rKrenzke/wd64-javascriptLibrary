@@ -22,6 +22,7 @@ function fetchSpace(e) {
         });
 }
 
+
 // DISPLAY FUNCTION
 function displayRockets(data){
     // console.log('DisplayRocket:', data);

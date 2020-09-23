@@ -3,51 +3,49 @@ const key = 'eiMWyE2j4zzM5cSGkw9Nv3fGN8bZkbLN';
 let url;
 
 //Search Form
-const searchTerm = document.querySelector('.search');
+const searchTerm = document.querySelector('.search');           //*** 
 const startDate = document.querySelector('.start-date');
 const endDate = document.querySelector('.end-date');
 const searchForm = document.querySelector('form');
 const submitBtn = document.querySelector('.submit');
 
-//Results Navigation
+//Results Navigation                                            // Using the querySelector() method to target specific HTML elements and assigning them to variable
 const nextBtn = document.querySelector('.next');
 const previousBtn = document.querySelector('.prev');
 const nav = document.querySelector('nav');
 
 //Results Section
-const section = document.querySelector('section');
+const section = document.querySelector('section');              //*** 
 
-nextBtn.style.display = 'none';
-previousBtn.style.display = 'none';
+nextBtn.style.display = 'none';     //sets default status of buttons to invisible, status is modified within the displayResults() function
+previousBtn.style.display = 'none'; //sets default status of buttons to invisible, status is modified within the displayResults() function
 
-let pageNumber = 0;
-console.log('PageNumber:'. pageNumber);
+let pageNumber = 0;     //set initial value of pageNumber to 0, will be refactored when using nextPage() and previousPage() functions
+//console.log('PageNumber:'. pageNumber);
 //let displayNav = false;
 
-        //1                     //2
-searchForm.addEventListener('submit', fetchResults);
-nextBtn.addEventListener('click', nextPage); //3
-previousBtn.addEventListener('click', previousPage); //3
+                            
+searchForm.addEventListener('submit', fetchResults);    //function listening for a 'submit' event for the 'form' HTML element, then will invoke the fetchResults() function
+nextBtn.addEventListener('click', nextPage);            //function listening for a 'click' event for the '.next' HTML class element, then will invoke the nextPage() function
+previousBtn.addEventListener('click', previousPage);    //function listening for a 'click' event for the '.prev' HTML class element, then will invoke the previousPage() function
 
-function fetchResults(e){
-    e.preventDefault();
-    //Assemble the full URL
-    url = baseURL + '?api-key=' + key + '&page=' + pageNumber + '&q=' + searchTerm.value;
-    console.log("URL:", url);
+function fetchResults(e){   //e is an 'event object' similar to a variable that allows you to interact with the object, and contains a bunch of properties(variables) and methods(functions)
+    e.preventDefault();     //We add the preventDefault() method to make sure a request isn't actually sent because the default nature of a form element is to submit data (i.e. send a POST request), but we want to get data (i.e. send a GET request). We are using the form to gather the data for that request
+    url = baseURL + '?api-key=' + key + '&page=' + pageNumber + '&q=' + searchTerm.value;   //Assemble the full URL, which will be used in the IF statement below to set the boundaries for dates the API will pull articles from
+    //console.log("URL:", url);
     
     if(startDate.value !== ''){
-        console.log(startDate.value)
-        url += '&begin_date=' + startDate.value;
+        url += '&begin_date=' + startDate.value; //concatenates the string with user input for beginning date and adds to the full URL
     };
 
     if(endDate.value !== ''){
-        url += '&end_date=' + endDate.value;
+        url += '&end_date=' + endDate.value;  //concatenates the string with the user input for end date and adds to the full URL
     };
 
-    fetch(url)
-        .then(function(result){
-            return result.json();
-        }).then(function(json){
+    fetch(url)  //We use the fetch() method and pass in the url variable (which by this point includes the following data: baseURL, API key, pageNumber, searchTerm string, beginning date, and end date)
+        .then(function(result){     //The 'result' variable represents that data returned from our fetch(url) function
+            return result.json();   //We take the returned data and invoke the json() method to transform the data into a JSON object, therefore allowing us to interact with it and display it's values.
+        }).then(function(json){     //We then take the JSON-ified object and pass it into our displayResults() function
             displayResults(json);
         });
 }
@@ -58,30 +56,30 @@ function displayResults(json){
     }
     let articles = json.response.docs;
     
-    if(articles.length === 10 && pageNumber === 0){
-        nextBtn.style.display = 'block';
-        previousBtn.style.display = 'none';
-    } else if (articles.length < 10 && pageNumber !== 0){
-        nextBtn.style.display = 'none';
+    if(articles.length === 10 && pageNumber === 0){                 //*
+        nextBtn.style.display = 'block';                            
+        previousBtn.style.display = 'none';                         
+    } else if (articles.length < 10 && pageNumber !== 0){           
+        nextBtn.style.display = 'none';                             // Logic for determining when 'Next' and 'Previous' buttons display
         previousBtn.style.display = 'block';
     } else {
         nextBtn.style.display = 'block';
         previousBtn.style.display = 'block';
-        //nav.style.display = 'block'; //? Why doesn't this work?
-    }
+        //nav.style.display = 'block';
+    }                                                               //*
 
     if(articles.length === 0){
         console.log('No results');
     } else {
-        for(let i = 0; i < articles.length; i++){
+        for(let i = 0; i < articles.length; i++){       //Using a FOR loop, we iterate through the list of articles and create HTML elements(article, h2, a, img, p, and div) for each one, and then assign each one of those elements to a variable
             let article = document.createElement('article');
             let heading = document.createElement('h2');
             let link = document.createElement('a');
             let img = document.createElement('img');
             let para = document.createElement('p');
-            let clearfix = document.createElement('div');
+            let clearfix = document.createElement('div');  //*A clearfix is a way for an element to clear its child elements automatically without any additional markup
 
-            let current = articles[i];
+            let current = articles[i];  //This variable is being assigned the specific, individual article (and therefore access to all its properties) that exists for that particular iteration of the FOR loop
 
             link.href = current.web_url;
             link.textContent = current.headline.main;
@@ -126,7 +124,7 @@ function displayResults(json){
 function nextPage(e){
     pageNumber++;
     fetchResults(e);
-    console.log('Page number:', pageNumber);
+    //console.log('Page number:', pageNumber);
 };
 
 function previousPage(e){
@@ -136,5 +134,5 @@ function previousPage(e){
         return;
     }
     fetchResults(e);
-    console.log("Page:", pageNumber);
+    //console.log("Page:", pageNumber);
 };
