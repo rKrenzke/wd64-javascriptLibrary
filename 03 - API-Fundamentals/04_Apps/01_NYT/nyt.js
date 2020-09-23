@@ -86,13 +86,13 @@ function displayResults(json){
             link.href = current.web_url;
             link.textContent = current.headline.main;
 
-            para.textContent = 'Keywords: ';
+            // para.textContent = 'Keywords: ';
 
-            for(let j = 0; j < current.keywords.length; j++){
-                let span = document.createElement('span');
-                span.textContent += current.keywords[j].value + ' ';
-                para.appendChild(span);
-            }
+            // for(let j = 0; j < current.keywords.length; j++){
+            //     let span = document.createElement('span');
+            //     span.textContent += current.keywords[j].value + ' ';
+            //     para.appendChild(span);
+            // }
 
             if(current.multimedia.length > 0) {
                 img.src = 'http://www.nytimes.com/' + current.multimedia[0].url;
@@ -100,6 +100,18 @@ function displayResults(json){
             }
 
             clearfix.setAttribute('class', 'clearfix');
+
+            article.style.margin = '25px';
+            article.style.width = '200px';
+            article.style.height = '300px';
+            article.style.borderRadius = '5px';
+            article.style.boxShadow = '2px 2px 8px black';
+
+            link.style.textDecoration = 'none';
+            link.style.color = 'black';
+
+            img.style.width = '75%';
+            img.style.height = 'auto';
 
             article.appendChild(heading);
             heading.appendChild(link);
