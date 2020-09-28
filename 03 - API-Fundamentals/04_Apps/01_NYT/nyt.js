@@ -45,13 +45,13 @@ function fetchResults(e){   //e is an 'event object' similar to a variable that 
     fetch(url)  //We use the fetch() method and pass in the url variable (which by this point includes the following data: baseURL, API key, pageNumber, searchTerm string, beginning date, and end date)
         .then(function(result){     //The 'result' variable represents that data returned from our fetch(url) function
             return result.json();   //We take the returned data and invoke the json() method to transform the data into a JSON object, therefore allowing us to interact with it and display it's values.
-        }).then(function(json){     //We then take the JSON-ified object and pass it into our displayResults() function
-            displayResults(json);
+        }).then(function(json){     
+            displayResults(json);   //We then take the JSON-ified object and pass it into our displayResults() function
         });
 }
 
 function displayResults(json){
-    while (section.firstChild){
+    while (section.firstChild){     //This while loop checks to see if there is content already on the page (in the form of newly created child elements that occurs after search results are returned). If there are child elements, those are cleared so the next page of content appears at the top. Otherwise, more articles would simply be added to the bottom in an ever-growing list. 
         section.removeChild(section.firstChild);
     }
     let articles = json.response.docs;
@@ -81,8 +81,8 @@ function displayResults(json){
 
             let current = articles[i];  //This variable is being assigned the specific, individual article (and therefore access to all its properties) that exists for that particular iteration of the FOR loop
 
-            link.href = current.web_url;
-            link.textContent = current.headline.main;
+            link.href = current.web_url; //linking the newly created 'a' tag above to this specific article's url
+            link.textContent = current.headline.main; //pulling the main headline of each article so it will appear within the 'a' (which is nested in our 'h2' tag)
 
             // para.textContent = 'Keywords: ';
 
@@ -111,12 +111,12 @@ function displayResults(json){
             img.style.width = '75%';
             img.style.height = 'auto';
 
-            article.appendChild(heading);
-            heading.appendChild(link);
-            article.appendChild(img);
-            article.appendChild(para);
+            article.appendChild(heading); //The newly created 'h2' tag is nested in the new 'article' HTML element
+            heading.appendChild(link);  //The newly created 'a' tag is nested inside the new 'h2' tag
+            article.appendChild(img);   //The newly created 'img' tag (along with the image source and alternate name text from above) is nested inside the new 'article' HTML element
+            article.appendChild(para);  //The newly created 'p' tag is nested inside the new 'article' HTML element
             article.appendChild(clearfix);
-            section.appendChild(article);
+            section.appendChild(article);  //The newly created 'article' HTML element (and all of the appended elements above) is nested inside the EXISTING 'section' HTML element
         }
     }
 };
