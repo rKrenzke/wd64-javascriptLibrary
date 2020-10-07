@@ -1,5 +1,5 @@
 /*
-// CONSTRUCTOR FUNCTIONS
+CONSTRUCTOR FUNCTIONS
     - Functions allows us to easily create a unique solution for difference circumstances by using parameters.
         - Creating several different objects with the same keys, but different values.
 */
