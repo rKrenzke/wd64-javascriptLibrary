@@ -132,3 +132,17 @@ comics.push({title: 'Calvin and Hobbes', year: 1985});
 console.log('Before Altering: ', copiedComics);
 copiedComics[1].title = 'Detective Comics #27';
 console.log('After Altering: ', comics, copiedComics);
+
+class Polygon{
+    constructor(numArr){
+      this.numArr = numArr;
+    }
+    
+    perimeter(){
+      let p = this.numArr.reduce((total, amount) => total + amount)
+        return p
+    }
+  }
+
+  let newPolygon = new Polygon([3, 8, 3, 8]);
+  console.log(newPolygon.perimeter());
